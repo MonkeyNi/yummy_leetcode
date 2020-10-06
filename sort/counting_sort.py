@@ -1,4 +1,6 @@
-## 
+## 计数排序
+## 空间换时间
+## O(n+K)，稳定排序，外排序
 
 def counting_sort(nums):
     if not nums:

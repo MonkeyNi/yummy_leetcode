@@ -1,4 +1,5 @@
-##
+## 通过选定锚点（通常可以选择为第一个element）
+## 同时双向遍历数据，调整数据位置
 
 def quick_sort(nums):
     n = len(nums)
