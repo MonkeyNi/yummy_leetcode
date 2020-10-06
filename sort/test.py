@@ -7,6 +7,7 @@ from hill_sort import hill_sort
 from merge_sort import merge_sort
 from quick_sort import quick_sort
 from counting_sort import counting_sort
+from bucket_sort import bucket_sort
 
 if __name__ == "__main__":
    nums = [5,1,3,6,3,2,7,9,5,3]
@@ -17,3 +18,4 @@ if __name__ == "__main__":
    print("Merge sort: {}".format(merge_sort(nums))) 
    print("Quick sort: {}".format(quick_sort(nums)))
    print("Counting sort: {}".format(counting_sort(nums))) 
+   print("Bucket sort: {}".format(bucket_sort(nums, 1)))
