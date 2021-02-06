@@ -16,7 +16,6 @@ class Solution:
         
 
 test = Solution()
-nums = [1]
-k = 0
+nums = [10,9,2,5,3,7,101,18]
 res = test.subarraySum(nums, k)
 print(res)

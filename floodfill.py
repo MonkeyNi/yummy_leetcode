@@ -12,7 +12,7 @@ class Solution:
             return
         # not same color
         if image[x][y] != startcolor:
-            return
+            return  
         # if image[x][y] == -1:
         #     return
         # avoid duplicate visit
