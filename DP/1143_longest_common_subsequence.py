@@ -1,3 +1,6 @@
+# 自下而上的方法（dp数组）要比备忘录递归方法好用很多？
+# 从leetcode提交结果来看，快两倍，而且内存只有1/7
+
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         memo = {}
