@@ -1,4 +1,4 @@
-m=5
+m=4
 n=4
 
 for l in range(2,n+1):
