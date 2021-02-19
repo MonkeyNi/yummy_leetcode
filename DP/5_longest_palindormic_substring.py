@@ -31,12 +31,32 @@ class Solution:
                     start = i
         return s[start:start+max_res]
     
+    def longestPalindrome_2(self, s: str) -> str:
+        if len(s) <= 1:
+            return s
+        res = ''
+        for i in range(len(s)):
+            # we need to consider both 'even' and 'odd' situation
+            res1 = self.help_2(s, i, i)
+            res2 = self.help_2(s, i, i+1)
+            
+            res = res1 if len(res1) > len(res) else res
+            res = res2 if len(res2) > len(res) else res
+        return res
+    
+    def help_2(self, s, i, j):
+        # note the border (include all situation)
+        while (i >= 0 and j < len(s) and s[i] == s[j]):
+            i -= 1
+            j += 1
+        return s[i+1:j] # note the border
+    
     
 test = Solution()
 s = "babad"
-# s = "cbbd"
+s = "cbbd"
 # s = "a"
-s = "ac"
-s = "aacabdkacaa"
-res = test.longestPalindrome(s)
+# s = "ac"
+# s = "aacabdkacaa"
+res = test.longestPalindrome_2(s)
 print(res)
