@@ -30,10 +30,15 @@ class Solution:
             return True
         return False
     
+    def stoneGame_2(self, piles: List[int]) -> bool:
+        even = sum([p for i, p in enumerate(piles) if i%2 == 0])
+        odd = sum([p for i, p in enumerate(piles) if i%2 != 0])
+        return even > odd
     
 test = Solution()
 piles = [3, 7, 2, 3]
-res = test.stoneGame(piles)
+# res = test.stoneGame(piles)
+res = test.stoneGame_2(piles)
 print(res)
                 
                 
