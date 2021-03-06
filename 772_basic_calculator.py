@@ -34,7 +34,7 @@ class Solution:
                 if char == ')':
                     break
             return sum(stack)
-        return helper(list(s))
+        return helper(list(s)) # convert string to list first
 
 
 test = Solution()
