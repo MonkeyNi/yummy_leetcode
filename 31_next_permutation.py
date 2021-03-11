@@ -17,11 +17,14 @@ class Solution:
             nums[:] = nums[::-1] # not nums = nums[::-1]
         else:
             for i, ele in enumerate(nums[j:], start=j):
+                # find the first ele which is larger than nums[j-1] in nums[j:]
                 if nums[i] <= nums[j-1]:
                     i -= 1
                     break
             
+            # replace 
             nums[j-1], nums[i] = nums[i], nums[j-1]
+            # change from maximum to minimum
             nums[j:] = nums[j:][::-1]
 
         return nums
