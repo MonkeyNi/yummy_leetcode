@@ -4,16 +4,18 @@ from typing import List
 class Solution:
     # Backtracking
     def subsets(self, nums: List[int]) -> List[List[int]]:
+        
+        def dfs(nums, path):
+            res.append(path)
+            if not nums:
+                return
+            for i, ele in enumerate(nums):
+                self.dfs(nums[i+1:], path+[ele], res)
+                
         res = []
-        self.dfs(nums, [], res)
+        dfs(nums, [])
         return res
 
-    def dfs(self, nums, path, res):
-        res.append(path)
-        if not nums:
-            return
-        for i, ele in enumerate(nums):
-            self.dfs(nums[i+1:], path+[ele], res)
     
     # Mathematical induction
     def subsets_2(self, nums: List[int]) -> List[List[int]]:
