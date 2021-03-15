@@ -10,7 +10,7 @@ class Dijkstra:
     """
 
     def shortest_path(self, matrix, start=0):
-        """
+        """  
         Calculate the shortest path from start to each nodes
 
         Args:
