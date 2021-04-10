@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def stoneGame(self, piles: List[int]) -> bool:
+    def stoneGame(self, piles: List[int]):
         if not piles:
             return False
         n = len(piles)
@@ -34,7 +34,9 @@ class Solution:
         even = sum([p for i, p in enumerate(piles) if i%2 == 0])
         odd = sum([p for i, p in enumerate(piles) if i%2 != 0])
         return even > odd
-    
+
+
+
 test = Solution()
 piles = [3, 7, 2, 3]
 # res = test.stoneGame(piles)
