@@ -2,6 +2,9 @@ from typing import List
 
 
 class Solution:
+    """
+    Simple DP problem, dp[i][j] mean to reach the ith point in jth road, the minimum side step we need.
+    """
     def minSideJumps(self, obstacles: List[int]):
         t = len(obstacles)
         dp = [[float('inf') for _ in range(3)] for _ in range(len(obstacles))]
