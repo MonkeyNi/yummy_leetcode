@@ -3,6 +3,14 @@ class Solution:
         
         memo = {}
         def dp(k, n):
+            """
+            Args:
+                k ([type]): number of good eggs
+                n ([type]): number of floors need to be tested
+
+            Returns:
+                [type]: [description]
+            """
             if k == 1:
                 return n
             if n == 0:
