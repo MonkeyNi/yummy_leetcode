@@ -21,6 +21,10 @@ class Solution:
         return dp[len(nums)-1]
 
     def rob_2(self, nums: List[int]):
+        # dp_0, dp_1, dp_2 (res)
+        # when calculate dp_2, there are two situations
+        #   1. inlcude dp_1, which is dp_1
+        #   2. not include dp_1, which is dp_0 + dp_2
         if not nums:
             return 0
         if len(nums) <= 2:
@@ -33,9 +37,24 @@ class Solution:
             dp_1 = res
         return res
 
+    def rob_3(self, nums):
+        if not nums:
+            return 0
+        if len(nums) == 1:
+            return nums[0]
+        n = len(nums)
+        dp = [[0, 0] for _ in range(n)]
+        dp[0][1] = nums[0]
+        for i in range(1, n):
+            num = nums[i]
+            dp[i][1] = dp[i-1][0] + num
+            dp[i][0] = max(dp[i-1][0], dp[i-1][1])
+            
+        return max(dp[n-1])
+
 test = Solution()
 nums = [1,2,3,1]
-# nums = [2,7,9,3,1]
+nums = [2,7,9,3,1]
 # nums = [2,1,1,2]
-res = test.rob_2(nums)
+res = test.rob_3(nums)
 print(res)
