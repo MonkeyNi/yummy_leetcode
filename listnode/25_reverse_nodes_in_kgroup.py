@@ -42,7 +42,7 @@ class Solution:
         return head
             
     
-    def reverseKGroup_2(self, head: ListNode, k: int) -> ListNode:
+    def reverseKGroup_2(self, head: ListNode, k: int):
         """
         TLE: time limited exceeded
         """
