@@ -11,7 +11,7 @@ class Solution:
             if len(dirs) == ind:
                 dirs.append([])
             if ind:
-                path = dirs[ind-1][-1]+'/'+f[2*ind-ind:]
+                path = dirs[ind-1][-1]+'/'+f[ind:]
             else:
                 path = f[2*ind:]
             if '.' in path:
