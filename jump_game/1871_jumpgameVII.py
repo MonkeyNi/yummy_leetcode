@@ -5,7 +5,7 @@ class Solution:
     """
     BSF problem;
     Use deque, for each iteration, we need to add qualified ind to queue;
-    To avoid 'duplicate checking', we use 'max_reach' to record the max ind that last iter can reach;
+    To avoid duplicate 'checking', we use 'max_reach' to record the max ind that last iter can reach;
     Time complexity: O(n)
     Space complexity: O(n)
     """
