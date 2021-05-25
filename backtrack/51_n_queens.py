@@ -1,7 +1,7 @@
 class Solution:
     """
     我这个脑子当时是怎么想出来这种解法的。把每行可能的坐标保存下来，进一步计算。
-    包括位于斜线的情况下，abs(x1,x2) == abs(y1-y2).
+    包括位于斜线的情况下，abs(x1-x2) == abs(y1-y2).
     速度比‘标准’解法似乎快？ 主要是快在判断的部分，我这里是O（1），因为提前储存了皇后的位置
     ‘标准算法’是O（n），需要局部遍历
     """
@@ -45,7 +45,7 @@ class Solution:
 
 
 test = Solution()
-n = 6
+n = 4
 res = test.solveNQueens(n)
 for i in res:
     print(i)
