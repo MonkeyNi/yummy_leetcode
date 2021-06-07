@@ -8,7 +8,8 @@ class Solution:
     
     This problem is different from 'longest palindrome subsquence'
     """
-    def longestPalindrome(self, s: str):
+    def longestPalindrome(self, s):
+        # VERT SLOW!!!
         n = len(s)
         if n <= 1:
             return s
@@ -20,18 +21,42 @@ class Solution:
         res = 0
         start = 0
         max_res = 1
-        for i in range(len(s)-1, -1, -1):
-            for dest in range(1, len(s) - i):
-                j = dest + i
-                if dest == 1 and s[i] == s[j]:
-                    dp[i][j] = True
-                else:
-                    if s[i] == s[j] and dp[i+1][j-1]:
+
+        # This is just like traverse obliquely
+        # for l in range(2, n+1):
+        #     for i in range(n-l+1):
+        #         j = l + i - 1
+
+        # traverse potential palindrome length
+        for L in range(2, n+1):
+            # set left border, then j - i + 1 = L
+            for i in range(n):  # for i in  range(n-L+1)
+                j = L + i - 1
+                if j >= n:
+                    break
+                if s[i] != s[j]:
+                #     dp[i][j] = False
+                # else:
+                    if j - i < 3:  # e.g. aa, aba
                         dp[i][j] = True
+                    else:
+                        dp[i][j] = dp[i+1][j-1]
                 if dp[i][j] and j-i+1 > max_res:
-                    max_res = j - i + 1
+                    max_res = j-i+1
                     start = i
         return s[start:start+max_res]
+        # for i in range(len(s)-1, -1, -1):
+        #     for dest in range(1, len(s) - i):
+        #         j = dest + i
+        #         if dest == 1 and s[i] == s[j]:
+        #             dp[i][j] = True
+        #         else:
+        #             if s[i] == s[j] and dp[i+1][j-1]:
+        #                 dp[i][j] = True
+        #         if dp[i][j] and j-i+1 > max_res:
+        #             max_res = j - i + 1
+        #             start = i
+        # return s[start:start+max_res]
     
     def longestPalindrome_2(self, s: str):
         if len(s) <= 1:
