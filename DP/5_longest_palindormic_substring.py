@@ -2,15 +2,17 @@ class Solution:
     """
     Substrings are consecutive subsequence.
     dp[i][j]: if s[i:j] is palindrome
+    dp[i][j] is palindrome if and only if dp[i+1][j-1] is palindrome and s[i]==s[j]
+    dp[i][i] = True
+    dp[i][i+1] = (s[i]==s[i+1])
     
     This problem is different from 'longest palindrome subsquence'
     """
-    def longestPalindrome(self, s: str) -> str:
-        
-        if len(s) <= 1:
+    def longestPalindrome(self, s: str):
+        n = len(s)
+        if n <= 1:
             return s
-        
-        dp = [[False for _ in range(len(s))] for _  in range(len(s))]
+        dp = [[False]*n for _ in range(n)]
         # base case
         for i in range(len(s)):
             dp[i][i] = True
@@ -31,7 +33,7 @@ class Solution:
                     start = i
         return s[start:start+max_res]
     
-    def longestPalindrome_2(self, s: str) -> str:
+    def longestPalindrome_2(self, s: str):
         if len(s) <= 1:
             return s
         res = ''

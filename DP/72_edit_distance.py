@@ -1,5 +1,5 @@
 class Solution:
-    def minDistance(self, word1: str, word2: str) -> int:
+    def minDistance(self, word1: str, word2: str):
         """
         Recursive method, from top to bottom (use memory to remove duplicate sub questions)
         """
@@ -28,7 +28,7 @@ class Solution:
         
         return dp(len(word1)-1, len(word2)-1)
 
-    def minDistance_2(self, word1: str, word2: str) -> int:
+    def minDistance_2(self, word1: str, word2: str):
         """
         dp table method, from bottom to top
         """
