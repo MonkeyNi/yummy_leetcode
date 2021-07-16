@@ -41,9 +41,10 @@ class LRUCache:
             return self.pool[key]
         
     def put(self, key: int, value: int) -> None:
-        # check size, if full, remove not used one
+        # check size, if full and we need to add key, remove not used one
         if not key in self.pool and len(self.pool) == self.size:
             self.pool.popitem(last=False)
+        # update or add key first
         self.pool[key] = value
         self.pool.move_to_end(key)
             
