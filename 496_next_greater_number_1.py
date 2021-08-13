@@ -5,6 +5,8 @@ class Solution:
     """
     Monotonic stack.
     For each element, it has been push (and pop) at most one time. O(n)
+    1. 先找到自己的；
+    2. 因为nums1是nums2的子集，所以结果返回nums1的key就可以了；
     """
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]):
         if not nums1 or not nums2:

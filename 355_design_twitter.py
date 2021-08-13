@@ -1,5 +1,7 @@
 from collections import defaultdict, deque
 from itertools import count, islice
+import heapq
+# from typing import List
 
 class Twitter:
 
@@ -7,7 +9,7 @@ class Twitter:
         """
         Initialize your data structure here.
         """
-        self.time = count(step=-1)
+        self.time = count(step=-1)  # must be negative 1
         self.follwee = defaultdict(set)
         self.tweets = defaultdict(deque)
         
@@ -19,7 +21,7 @@ class Twitter:
         self.tweets[userId].appendleft((next(self.time), tweetId))
         
 
-    def getNewsFeed(self, userId: int) -> List[int]:
+    def getNewsFeed(self, userId: int):
         """
         Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
         """
