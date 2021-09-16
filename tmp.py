@@ -1,18 +1,17 @@
-import string
-from collections import Counter
-
-class Solution:
-    def mostCommonWord(self, paragraph, banned):
-        paragraph = paragraph.lower()
-        puncs = string.punctuation
-        for c in puncs:
-            paragraph = paragraph.replace(c, ' ')
-        
-        words = paragraph.split()
-        words_dic = Counter(words)
-        words_dic = sorted(words_dic, key=lambda x:-(words_dic[x]))
-        for word in words_dic:
-            if not word in banned:
-                return word
-        return None
-        
+class Solution(object):
+    def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        tmp = []
+        while head:
+            tmp.append(head.val)
+            head = head.next
+        i = 0, j = len(tmp) - 1
+        while i < j:
+            if tmp[i] != tmp[j]:
+                return False
+            i += 1
+            j -= 1
+        return True
