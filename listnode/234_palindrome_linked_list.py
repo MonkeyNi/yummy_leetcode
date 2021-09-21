@@ -70,6 +70,20 @@ class Solution:
             right = right.next
             left = left.next
         return True
+    
+    def isPalindrome_4(self, head):
+        slow = fast = head
+        rev = None
+        while fast and fast.next:
+            fast = fast.next.next
+            rev, rev.next, slow = slow, rev, slow.next
+        if fast:
+            slow = slow.next
+            
+        while rev and rev.val == slow.val:
+            rev = rev.next
+            slow = slow.next
+        return not rev
 
 
 nums = [1, 1, 2, 1]
